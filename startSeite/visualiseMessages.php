@@ -7,7 +7,7 @@
  */
 
 include ("visualiseMessages.html");
-//get stored messages from server instead of next 4 lines
+//get stored messages from Datenbank instead of next 4 lines
 print ($writtenMessage->getAuthor());
 print (" has written:");
 print ("<br>");

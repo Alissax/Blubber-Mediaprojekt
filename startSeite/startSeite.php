@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $writtenMessage->setText($inputText);
     $writtenMessage->setAuthor($inputUser);
     $writtenMessage->setImage("");
-    // sent writtenMessage to server for storage
+    // sent writtenMessage to Datenbank for storage
 }
 
 
