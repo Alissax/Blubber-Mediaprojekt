@@ -1,4 +1,5 @@
 <?php
+require_once ("dbConfig.php");
 $upload_dir="uploads/";
 ?>
 <!DOCTYPE html>
@@ -34,16 +35,27 @@ $upload_dir="uploads/";
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>borey</td>
-                <td>Developer</td>
-                <td><img src="<?php echo $upload_dir?>17241-200.png" height="40"</td>
-                <td>
-                    <a class="btn btn-info" href=""><span class="glyphicon glyphicon-edit"></span>Edit</a>
-                    <a class="btn btn-info" href=""><span class="glyphicon glyphicon-remove"></span>Delete</a>
-                </td>
-            </tr>
+            <?php
+            $sql="select * from users";
+            $result=mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result)) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["id"]?></td>
+                        <td><?php echo $row ["name"]?></td>
+                        <td><?php echo $row ["position"]?></td>
+                        <td><img src="<?php echo $upload_dir . $row ["photo"] ?>15724-200.png" height="40"</td>
+                        <td>
+                            <a class="btn btn-info" href="edit.php?id=<?php echo $row ["id"]?>">
+                                <span class="glyphicon glyphicon-edit"></span>Edit</a>
+                            <a class="btn btn-danger" href=""><span class="glyphicon glyphicon-remove"></span>Delete</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }
+            ?>
             </tbody>
         </table>
     </div>
