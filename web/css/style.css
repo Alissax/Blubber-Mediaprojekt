@@ -91,12 +91,12 @@ body h2 {
 	text-decoration:underline;
 }
 .right-section-w3ls {
-    width: 39%;
-    float: left;
+    width: 35%;
+    float: right;
     background: url(../images/side.png)no-repeat;
-    background-size: cover;
+    background-size: contain;
     padding: 20px;
-    min-height: 496px;
+    min-height: 480px;
 }
 /*-- checkbox --*/
 .inset input[type="checkbox"] {
@@ -286,8 +286,8 @@ body h2 {
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s; 
-    opacity: .5; 
+    transition: all 0.3s;
+    opacity: .5;
 }
 .resp-tab-active {
     text-shadow: none;
