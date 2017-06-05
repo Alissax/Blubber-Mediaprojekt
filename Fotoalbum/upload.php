@@ -1,3 +1,13 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Alissa
+ * Date: 28.05.2017
+ * Time: 11:36
+ */
+include_once("check_session.php");
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
