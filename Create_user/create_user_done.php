@@ -7,3 +7,4 @@
  */
 
     echo "<h1>Nutzer erfolgreich erstellt!";
+header ("refresh:2;url=../login_neu/timeline.php");
