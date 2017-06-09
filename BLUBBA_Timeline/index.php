@@ -97,6 +97,16 @@ include_once("connect.php");
     </div>
 
     </div>
+    <div id="about">
+        <div class="container16"><div class="column16">
+
+                HIER WIEDER TEXT
+
+        <div class="clear"></div>
+            </div></div>
+    </div>
+
+
 </section>
 
 <footer id="footer">
