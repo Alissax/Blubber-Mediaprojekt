@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("connect.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,48 +55,26 @@ session_start();
 </header>
 <section id="content">
     <div id="about">
-        <div class="container16"><div class="column16">
+        <div class="container16">
+            <div class="column16">
                 <br>
                 <br>
                 <br>
                 <br>
                 <?php
-                    echo "Hallo: " .$_SESSION['username'];
+                    echo "Hallo " .$_SESSION['username'];
                  ?>
                 <br>
                 <br>
                 <br>
-                <?php
-                // Anzeigen von allen vorhandenen Tweets aus der Datenbank
-                include_once("connect.php");
-                try {
-                $db = new PDO($dsn, $dbuser, $dbpass);
-                $sql = "SELECT * FROM posts ";
-                $query = $db->prepare($sql);
-                $query->execute();
-                while ($zeile = $query->fetchObject()) {
-                    echo "<h2>Tweet Nummer: $zeile->post_id<br></h2>";
-                    echo "<h3>Geschrieben am: $zeile->date</h3>";
-                    echo "<h3>Geschrieben von: <a href='profil.php?user_id=$zeile->userid'>$zeile->username</a><br>";
-                    echo "<h4>$zeile->post</h4>";
-                    echo "<img src='$zeile->post_picture' alt=\"Mountain View\" style=\"width:304px;height:228px;\"> <br>";
-                    echo "Quelle: <a href='$zeile->url'>$zeile->url</a><br><br>";
-                    echo "<a href='show.php?post_id=$zeile->post_id'>zeige</a><br>";
-                    if($_SESSION['user_id']==$zeile->user_id) {
-                        echo "Du bist Autor dieses Posts, also kannst du folgendes machen: <br>";
-                        echo "<a href='edit.php?post_id=$zeile->post_id'>editieren</a><br>";
-                        echo "<a href='delete_frage.php?post_id=$zeile->post_id'>l&ouml;sche</a><br>";
-                    }
-                }
-                ?>
-                <br>
-<?php
-$db = null;
-} catch (PDOException $e) {
-    echo "Error!: Bitte wenden Sie sich an den Administrator!...".$e;
-    die();
-}
-?>
+                <h1>Neuer Blubb.</h1>
+                <form action="../Blubb/create_do.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="post" size="80" maxlength="255" placeholder="Blubber los ..." /> <br><br>
+                    Blubb Bild: <input type="file" name="post_picture" /><br><br>
+                    <input type="submit" value="BLUBBERN" />
+                    <input type="reset" value="Reset">
+                </form>
+                <br><br><br>
 
                 HIER KOMMT EIN TEXT REIN!
                 <br>
