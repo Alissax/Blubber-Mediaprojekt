@@ -447,7 +447,7 @@ h2.resp-accordion {
 		top: 2px;
 	}
 	.sap_tabs, .w3ls-tabs {
-		height: 405px;
+		height: 560px;
 	}
 	.copy-right p {
 		font-size: 14px;
@@ -581,7 +581,7 @@ h2.resp-accordion {
 		font-size: 1.03em;
 	}
 	.sap_tabs, .w3ls-tabs {
-		height: 530px;
+		height: 560px;
 	}
 	.right-section-w3ls {
 		min-height: 418px;
@@ -711,13 +711,13 @@ h2.resp-accordion {
 }
 @media(max-width:375px){
 	.message.warning {
-		width: 79%;
+		width: 85%;
 	}
 	.copy-right p {
 		letter-spacing: .5px;
 	}
 	.sap_tabs, .w3ls-tabs {
-		height: 385px;
+		height: 560px;
 	}
 }
 @media(max-width:320px){
@@ -731,7 +731,7 @@ h2.resp-accordion {
 	.sap_tabs, .w3ls-tabs {
 		width: 78.1%;
 		padding: 1.7em;
-		height: 355px;
+		height: 560px;
 	}
 	.inset input[type="text"], .inset input[type="password"], .inset input[type="email"] {
 		width: 85%;
