@@ -25,7 +25,7 @@ if (!empty($username) && !empty($name) && !empty($vorname) && !empty($email)) {
         echo "Error!: Bitten wenden Sie sich an den Administrator...";
         die();
     }
-    header ("refresh:2;url=login.html");
+    header('Location: create_user_done.php');
 }
 else {
     echo "Error: Bitte alle Felder ausfüllen!<br/>";
