@@ -26,18 +26,17 @@ img{max-width:100%;}
 /*end reset*/
 /*--start-body--*/
 body{
-     background: url(../images/bann.jpg)no-repeat;
-	position:relative;
+    position:relative;
 	font-family: 'Open Sans', sans-serif;
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed;
-
 }
+
 body h1 {
-      text-align: center;
+    text-align: center;
     color: #82CCF2;
-        font-size: 2.5em;
+    font-size: 2.5em;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -93,7 +92,7 @@ body h2 {
 .right-section-w3ls {
     width: 35%;
     float: right;
-    background: url(../images/side.png)no-repeat;
+    background: url(../images/side.jpg)no-repeat;
     background-size: contain;
     padding: 20px;
     min-height: 480px;
@@ -368,6 +367,7 @@ h2.resp-accordion {
     -o-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
 }
+
 /*--/responsive--*/
 @media (max-width:1600px){
 	.message.warning {
@@ -581,7 +581,7 @@ h2.resp-accordion {
 		font-size: 1.03em;
 	}
 	.sap_tabs, .w3ls-tabs {
-		height: 390px;
+		height: 530px;
 	}
 	.right-section-w3ls {
 		min-height: 418px;
@@ -633,7 +633,7 @@ h2.resp-accordion {
 		width: 89.69%;
 		min-height: 170px;
 		float: none;
-		background: url(../images/side.png)no-repeat 0px -293px;
+		background: url(../images/side.jpg)no-repeat 0px -293px;
 		background-size: cover;
 	}
 }
@@ -685,7 +685,7 @@ h2.resp-accordion {
 	.right-section-w3ls {
 		width: 86.7%;
 		min-height: 150px;
-		background: url(../images/side.png)no-repeat 0px -216px;
+		background: url(../images/side.jpg)no-repeat 0px -216px;
 		background-size: cover;
 	}
 }
@@ -753,7 +753,7 @@ h2.resp-accordion {
 		margin: 25px 26px;
 	}
 	.right-section-w3ls {
-		background: url(../images/side.png)no-repeat 0px -181px;
+		background: url(../images/side.jpg)no-repeat 0px -181px;
 		background-size: cover;
 		min-height: 120px;
 	}
