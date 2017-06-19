@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("connect.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,7 @@ include_once("connect.php");
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="media/js/jquery.min.js"></script>
     <script src="media/js/jquery.form.min.js"></script>
     <script src="media/js/jquery.modal.min.js"></script>
     <script src="media/js/javascript.js"></script>
@@ -41,13 +42,12 @@ include_once("connect.php");
             <img class="logo" src="media/img/logo2.png" />
             <ul>
                 <li class="active"><a href="">Startseite</a></li>
-                <li><a href="">Dein Profil</a></li>
-                <li><a href="">Einstellungen</a></li>
-                <li><a href="">Dein Fotoalbum</a></li>
+                <li> <a href="">Dein Profil</a></li>
+                <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
+                <li><a href="../PW_aendern/index.php">Einstellungen</a></li>
                 <?php
                 if(!isset($_SESSION['user_id']))?>
-                <li><a href=\"logout.php\">Ausloggen</a></li>
-
+                <li><a href="../login_neu/logout.php">Ausloggen</a></li>
             </ul>
             <a href="#"><img class="menu" src="media/img/menu.png" /></a>
             <div class="clear"></div>
@@ -67,15 +67,37 @@ include_once("connect.php");
                 <br>
                 <br>
                 <br>
-                <h1>Neuer Blubb.</h1>
-                <form action="../Blubb/create_do.php" method="post" enctype="multipart/form-data">
-                    <input type="text" name="post" size="80" maxlength="255" placeholder="Blubber los ..." /> <br><br>
-                    Blubb Bild: <input type="file" name="post_picture" /><br><br>
+                <h1>Neuer BLUBB</h1>
+                <form action="../create_do.php" method="post" enctype="multipart/form-data">
+                    Text des BLUBBs: <br>
+                    <input type="text" name="post" size="80" maxlength="500" /> <br><br>
+                    BLUBB Bild: <input type="file" name="post_picture">
+                    BLUBB Quelle: <input type="text" name="url" /><br>
+
                     <input type="submit" value="BLUBBERN" />
-                    <input type="reset" value="Reset">
                 </form>
                 <br><br><br>
+                <?php
+                try {
+                $db = new PDO($dsn, $dbuser, $dbpass);
+                $sql = "SELECT * FROM posts";
+                $query = $db->prepare($sql);
+                $query->execute();
 
+                while ($zeile = $query->fetchObject()) {
+                    echo "<h2>Blubb Nummer: $zeile->post_id<br></h2>";
+                    echo "<h3>Geschrieben am: $zeile->date</h3>";
+                    echo "<h3>Geschrieben von:</h3><br>";
+                    echo "<h4>$zeile->post</h4>";
+                }
+                ?>
+                    <?php
+                    $db = null;
+                } catch (PDOException $e) {
+                    echo "Error!: Bitte wenden Sie sich an den Administrator!?...".$e;
+                    die();
+                }
+                ?>
                 HIER KOMMT EIN TEXT REIN!
                 <br>
                 <br>
@@ -96,7 +118,7 @@ include_once("connect.php");
             </div></div>
     </div>
 
-    </div>
+
     <div id="about">
         <div class="container16"><div class="column16">
 
@@ -116,7 +138,7 @@ include_once("connect.php");
     <li class="active"><a href="">Startseite</a></li>
     <li><a href="">Profil</a></li>
     <li><a href="">Einstellungen</a></li>
-    <li class="prevent"><a href="#">-</a></li>
+    <li class="prevent"><a href="#"></a></li>
     <li class="closemenu"><a href="#">Menü schließen</a></li>
 </ul>
 
