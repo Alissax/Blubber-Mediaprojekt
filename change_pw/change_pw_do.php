@@ -32,4 +32,4 @@ if(password_verify($passwort_alt, $passwordausDB)) {
         die();
     }
 }
-//header einbauen
+//header einbauen um auf Seite zurückgeleitet zu werden
