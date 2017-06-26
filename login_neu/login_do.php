@@ -16,7 +16,7 @@ if(password_verify($passwordeingabe, $passwordausDB)) {
 
     session_start();
     $_SESSION["username"] = $usernameausDB;
-    $_SESSION["userid"] = $userIDausDB;
+    $_SESSION["user_id"] = $userIDausDB;
     header ('Location: ../BLUBBA_Timeline/index.php');
 } else {
     echo "Login fehlgeschlagen. Du wirst zurück zum Login geleitet.";

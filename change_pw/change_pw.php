@@ -41,10 +41,10 @@ include_once("connect.php");
     <div class="container16"><div class="column16">
             <img class="logo" src="media/img/logo2.png" />
             <ul>
-                <li class="active"><a href="">Startseite</a></li>
-                <li> <a href="../Profil/edit_profil.php">Dein Profil</a></li>
+                <li><a href="../BLUBBA_Timeline/index.php">Startseite</a></li>
+                <li> <a href="">Dein Profil</a></li>
                 <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
-                <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
+                <li class="active"><a href="../PW_aendern/index.php">Einstellungen</a></li>
                 <?php
                 if(!isset($_SESSION['user_id']))?>
                 <li><a href="../login_neu/logout.php">Ausloggen</a></li>
@@ -62,56 +62,40 @@ include_once("connect.php");
                 <br>
                 <br>
                 <?php
-                    echo "Hallo " .$_SESSION['username'];
-                 ?>
+                echo "Hallo " .$_SESSION['username'];
+                ?>
                 <br>
                 <br>
                 <br>
-                <h1>Neuer BLUBB</h1>
-                <form action="../create_do.php" method="post" enctype="multipart/form-data">
-                    Text des BLUBBs: <br>
-                    <input type="text" name="post" size="80" maxlength="500" /> <br><br>
-                    BLUBB Bild: <input type="file" name="post_picture">
-                    BLUBB Quelle: <input type="text" name="url" /><br>
+                <h1>Ändere hier dein Passwort</h1>
+                <form action="change_pw_do.php" method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                Dein aktuelles Passwort
+                            </td>
+                            <td>
+                                <input type="password" name="passwort_alt" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Neues Passwort
+                            </td>
+                            <td>
+                                <input type="password" name="passwort_neu" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
 
-                    <input type="submit" value="BLUBBERN" />
+                            </td>
+                            <td>
+                                <input type="submit" value="&Auml;ndern" />
+                            </td>
+                        </tr>
+                    </table>
                 </form>
-                <br><br><br>
-                <?php
-                try {
-                $db = new PDO($dsn, $dbuser, $dbpass);
-                $sql = "SELECT * FROM posts";
-                $query = $db->prepare($sql);
-                $query->execute();
-
-                while ($zeile = $query->fetchObject()) {
-                    echo "<h2>Blubb Nummer: $zeile->post_id<br></h2>";
-                    echo "<h3>Geschrieben am: $zeile->date</h3>";
-                    echo "<h3>Geschrieben von:</h3><br>";
-                    echo "<h4>$zeile->post</h4>";
-                }
-                ?>
-                    <?php
-                    $db = null;
-                } catch (PDOException $e) {
-                    echo "Error!: Bitte wenden Sie sich an den Administrator!?...".$e;
-                    die();
-                }
-                ?>
-                HIER KOMMT EIN TEXT REIN!
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
 
 
                 <div class="clear"></div>
@@ -124,7 +108,7 @@ include_once("connect.php");
 
                 HIER WIEDER TEXT
 
-        <div class="clear"></div>
+                <div class="clear"></div>
             </div></div>
     </div>
 
