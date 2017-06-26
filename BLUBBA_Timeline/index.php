@@ -42,7 +42,7 @@ include_once("connect.php");
             <img class="logo" src="media/img/logo2.png" />
             <ul>
                 <li class="active"><a href="">Startseite</a></li>
-                <li> <a href="../Profil/edit_profil.php">Dein Profil</a></li>
+                <li> <a href="">Dein Profil</a></li>
                 <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
                 <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
                 <?php

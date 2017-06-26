@@ -32,3 +32,4 @@ if(password_verify($passwort_alt, $passwordausDB)) {
         die();
     }
 }
+//header einbauen
