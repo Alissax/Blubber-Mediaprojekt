@@ -31,5 +31,8 @@ if(password_verify($passwort_alt, $passwordausDB)) {
         echo "Error: Bitten wende Dich an die Admins!";
         die();
     }
+    header ("refresh:2;url=../change_pw/change_pw.php");
 }
-//header einbauen um auf Seite zurückgeleitet zu werde
+else {
+    echo "Bitte überprüfe dein eingegebenes Passwort nochmals<br/>";
+}
