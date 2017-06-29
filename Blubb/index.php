@@ -22,9 +22,6 @@ include_once "check_session.php";
         <h3>Neuer BLUBB </h3>
         <form enctype="multipart/form-data" method="post">
             <?php
-            //$target_dir = "uploads/";
-            //$target_file = $target_dir . basename($_FILES["file"]["name"]);
-           // $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
             if (isset ($_POST ["upload"])) { //upload ist der name welcher der submit Button trägt, siehe unten
                 $post = $_POST ["post"];
                 $post_picture = $_FILES ["post_picture"] ["name"];
@@ -40,7 +37,6 @@ include_once "check_session.php";
                     echo "Bitte befülle alle Felder mit Inhalten ! <br/><br/>";
                 }else {
                     move_uploaded_file($file_tmp, 'uploads/'.$random_name. '.jpg');
-                    //move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
                     $sql="insert into posts (post,post_picture,url,date,user_id,username) values ('".$post."','".$post_picture."','".$random_name."',NOW(),'".$user_id."','".$username."')";
                     echo $sql;
                     $result = mysqli_query($conn,$sql);

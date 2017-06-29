@@ -87,7 +87,7 @@ include_once("connect.php");
                 while ($zeile = $query->fetchObject()) {
                     echo "<h2>Blubb Nummer: $zeile->post_id<br></h2>";
                     echo "<h3>Geschrieben am: $zeile->date</h3>";
-                    echo "<h3>Geschrieben von:</h3><br>";
+                    echo "<h3>Geschrieben von:$zeile->username</h3><br>";
                     echo "<h4>$zeile->post</h4>";
                 }
                 ?>
