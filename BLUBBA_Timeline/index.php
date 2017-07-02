@@ -39,7 +39,7 @@ include_once("connect.php");
             </div></div>
     </div>
     <div class="container16"><div class="column16">
-           <img class="logo" src="media/img/logo2.png" />
+            <a href="../BLUBBA_Timeline/index.php"><img class="logo" src="media/img/logo2.png"/></a>
             <ul>
                 <li class="active"><a href="">Startseite</a></li>
                 <li> <a href="">Dein Profil</a></li>
@@ -92,7 +92,7 @@ include_once("connect.php");
                         }
                         ?>
 
-                        <textarea name="post" rows="5" cols= "30" maxlength="150" placeholder="Gebe hier deinen Post ein"></textarea>
+                        <textarea name="post" rows="5" cols= "30" maxlength="150" placeholder="Teile der Welt mit was dich bewegt..."></textarea>
 
                         <br/>
                         Wähle das Foto aus, welches du hochladen möchtest: <br/>
@@ -110,11 +110,11 @@ include_once("connect.php");
                 $query->execute();
 
                 while ($zeile = $query->fetchObject()) {
-                    echo "<h2>Blubb Nummer: $zeile->post_id<br></h2>";
-                    echo "<h3>Geschrieben am: $zeile->date</h3>";
+                    echo "Blubb Nummer: $zeile->post_id<br>";
+                    echo "<h2>Geschrieben am: $zeile->date</h2>";
                     echo "<h3>Geschrieben von:$zeile->username</h3>";
-                    echo "<h4>$zeile->post</h4>";
-                    echo "<img src='$zeile->post_picture' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:220px;\"><br><br><br>";
+                    echo "$zeile->post<br>";
+                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:100%;\"><br><br>";
                 }
                 ?>
 

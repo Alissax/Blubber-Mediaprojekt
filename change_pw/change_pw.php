@@ -39,12 +39,12 @@ include_once("connect.php");
             </div></div>
     </div>
     <div class="container16"><div class="column16">
-            <img class="logo" src="media/img/logo2.png" />
+            <a href="../BLUBBA_Timeline/index.php"><img class="logo" src="media/img/logo2.png"/></a>
             <ul>
                 <li><a href="../BLUBBA_Timeline/index.php">Startseite</a></li>
                 <li> <a href="">Dein Profil</a></li>
                 <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
-                <li class="active"><a href="../PW_aendern/index.php">Einstellungen</a></li>
+                <li class="active"><a href="change_pw.php">Einstellungen</a></li>
                 <?php
                 if(!isset($_SESSION['user_id']))?>
                 <li><a href="../login_neu/logout.php">Ausloggen</a></li>
@@ -59,20 +59,16 @@ include_once("connect.php");
             <div class="column16">
                 <br>
                 <br>
-                <br>
-                <br>
                 <?php
-                echo "Hallo " .$_SESSION['username'];
+                echo "Auf dieser Seite kannst Du, " .$_SESSION['username'].", Dein Passwort ändern";
                 ?>
                 <br>
                 <br>
-                <br>
-                <h1>Ändere hier dein Passwort</h1>
                 <form action="change_pw_do.php" method="post">
                     <table>
                         <tr>
                             <td>
-                                Dein aktuelles Passwort
+                                Dein aktuelles Passwort &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                             </td>
                             <td>
                                 <input type="password" name="passwort_alt" />
@@ -119,10 +115,10 @@ include_once("connect.php");
     <a href="http://medien-go.com" target="_blank">Developed by medien.GO</a>
 </footer>
 <ul class="mobile">
-    <li class="active"><a href="">Startseite</a></li>
+    <li><a href="">Startseite</a></li>
     <li><a href="">Dein Profil</a></li>
     <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
-    <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
+    <li class="active"><a href="../change_pw/change_pw.php">Einstellungen</a></li>
     <?php
     if(!isset($_SESSION['user_id']))?>
     <li><a href="../login_neu/logout.php">Ausloggen</a></li>
