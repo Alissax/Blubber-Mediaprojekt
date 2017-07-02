@@ -7,4 +7,4 @@
  */
 
     echo "<h1>Nutzer erfolgreich erstellt!";
-header ("refresh:2;url=../BLUBBA_Timeline/index.php");
+header ("refresh:2;url=../Login_Registrierung_Seite/BLUBBA.html");

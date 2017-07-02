@@ -57,23 +57,51 @@ include_once("connect.php");
     <div id="about">
         <div class="container16">
             <div class="column16">
-                <br>
+                <br><br>
                 <?php
                     echo "Hallo " .$_SESSION['username'];
                  ?>
                 <br>
                 <br>
-                <br>
-                <h1>Neuer BLUBB</h1>
-                <form action="../create_do.php" method="post" enctype="multipart/form-data">
-                    Text des BLUBBs: <br>
-                    <input type="text" name="post" size="80" maxlength="500" /> <br><br>
-                    BLUBB Bild: <input type="file" name="post_picture">
-                    BLUBB Quelle: <input type="text" name="url" /><br>
+                <h2>Neuer BLUBB</h2>
+                <div id="container">
+                    <form enctype="multipart/form-data" method="post">
+                        <?php
+                        if (isset ($_POST ["upload"])) { //upload ist der name welcher der submit Button trägt, siehe unten
+                            $post = $_POST ["post"];
+                            $post_picture = $_FILES ["post_picture"] ["name"];
+                            $file = $_FILES ["post_picture"] ["name"];
+                            $file_type = $_FILES ["post_picture"] ["type"];
+                            $file_size = $_FILES ["post_picture"] ["size"];
+                            $file_tmp = $_FILES ["post_picture"] ["tmp_name"];
+                            $random_name = rand(); // falls mehrere User Bilder unter dem selben Namen speichern
+                            $user_id = $_SESSION['user_id'];
+                            $username = $_SESSION ['username'];
 
-                    <input type="submit" value="BLUBBERN" />
-                </form>
-                <br><br><br>
+                            if (empty ($post) or empty ($post_picture)) {
+                                echo "Bitte befülle alle Felder mit Inhalten ! <br/><br/>";
+                            }else {
+                                move_uploaded_file($file_tmp, 'uploads/'.$random_name. '.jpg');
+                                $sql="insert into posts (post,post_picture,url,date,user_id,username) values ('".$post."','".$post_picture."','".$random_name."',NOW(),'".$user_id."','".$username."')";
+                                echo $sql;
+                                $result = mysqli_query($conn,$sql);
+
+
+                                echo "Bild erfolgreich hochgeladen!! <br/><br/>";
+                            }
+                        }
+                        ?>
+
+                        <textarea name="post" rows="5" cols= "30" maxlength="150" placeholder="Gebe hier deinen Post ein"></textarea>
+
+                        <br/>
+                        Wähle das Foto aus, welches du hochladen möchtest: <br/>
+                        <input type ="file" name="post_picture"/>
+                        <br/>
+                        <input type ="submit" name="upload" value="Upload"/>
+                    </form>
+                </div>
+                <br><br>
                 <?php
                 try {
                 $db = new PDO($dsn, $dbuser, $dbpass);
@@ -84,11 +112,12 @@ include_once("connect.php");
                 while ($zeile = $query->fetchObject()) {
                     echo "<h2>Blubb Nummer: $zeile->post_id<br></h2>";
                     echo "<h3>Geschrieben am: $zeile->date</h3>";
-                    echo "<h3>Geschrieben von:$zeile->username</h3><br>";
+                    echo "<h3>Geschrieben von:$zeile->username</h3>";
                     echo "<h4>$zeile->post</h4>";
-                    echo "<img src='$zeile->post_picture' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:220px;\"> <br>";
+                    echo "<img src='$zeile->post_picture' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:220px;\"><br><br><br>";
                 }
                 ?>
+
                     <?php
                     $db = null;
                 } catch (PDOException $e) {
