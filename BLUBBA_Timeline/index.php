@@ -39,7 +39,7 @@ include_once("connect.php");
             </div></div>
     </div>
     <div class="container16"><div class="column16">
-            <img class="logo" src="media/img/logo2.png" />
+           <img class="logo" src="media/img/logo2.png" />
             <ul>
                 <li class="active"><a href="">Startseite</a></li>
                 <li> <a href="">Dein Profil</a></li>
@@ -57,9 +57,6 @@ include_once("connect.php");
     <div id="about">
         <div class="container16">
             <div class="column16">
-                <br>
-                <br>
-                <br>
                 <br>
                 <?php
                     echo "Hallo " .$_SESSION['username'];
@@ -89,6 +86,7 @@ include_once("connect.php");
                     echo "<h3>Geschrieben am: $zeile->date</h3>";
                     echo "<h3>Geschrieben von:$zeile->username</h3><br>";
                     echo "<h4>$zeile->post</h4>";
+                    echo "<img src='$zeile->post_picture' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:220px;\"> <br>";
                 }
                 ?>
                     <?php
@@ -132,7 +130,7 @@ include_once("connect.php");
 </section>
 
 <footer id="footer">
-    <a href="http://medien-go.com" target="_blank">Developed by medien.GO</a>
+    <a href="http://medien-go.com" target="_blank">Developed by medien.GO</a>  &nbsp  &nbsp  &nbsp
 </footer>
 <ul class="mobile">
     <li class="active"><a href="">Startseite</a></li>
