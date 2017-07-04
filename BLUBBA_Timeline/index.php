@@ -61,6 +61,7 @@ include_once("connect.php");
                 <?php
                     echo "Hallo " .$_SESSION['username'];
                  ?>
+
                 <br>
                 <br>
                 <h2>Neuer BLUBB</h2>
@@ -112,7 +113,7 @@ include_once("connect.php");
                 while ($zeile = $query->fetchObject()) {
                     echo "Blubb Nummer: $zeile->post_id<br>";
                     echo "<h2>Geschrieben am: $zeile->date</h2>";
-                    echo "<h3>Geschrieben von:$zeile->username</h3>";
+                    echo "<h3>Geschrieben von:<a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                     echo "$zeile->post<br>";
                     echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:100%;\"><br><br>";
                 }
@@ -159,7 +160,7 @@ include_once("connect.php");
 </section>
 
 <footer id="footer">
-    <a href="http://medien-go.com" target="_blank">Developed by medien.GO</a>  &nbsp  &nbsp  &nbsp
+    <a href="#" target="_blank">BLUBBA-Gruppe</a>  &nbsp  &nbsp  &nbsp
 </footer>
 <ul class="mobile">
     <li class="active"><a href="">Startseite</a></li>
