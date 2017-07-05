@@ -111,11 +111,12 @@ include_once("connect.php");
                 $query->execute();
 
                 while ($zeile = $query->fetchObject()) {
-                    echo "Blubb Nummer: $zeile->post_id<br>";
-                    echo "<h2>Geschrieben am: $zeile->date</h2>";
-                    echo "<h3>Geschrieben von:<a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
+                    echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
+                    echo "<h5>$zeile->date</h5>";
+                    echo" <br>";
                     echo "$zeile->post<br>";
-                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br><br>";
+                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
+                    echo "___________________________________________________";
                 }
                 ?>
 
