@@ -31,12 +31,14 @@ include_once("check_session.php");
                $file_size = $_FILES ["file"] ["size"];
                $file_tmp = $_FILES ["file"] ["tmp_name"];
                $random_name = rand(); // falls mehrere User Bilder unter dem selben Namen speichern
+                $user_id = $_SESSION['user_id'];
+                $username = $_SESSION ['username'];
 
                if (empty ($name) or empty ($file)) {
                    echo "Bitte befülle alle Felder mit Inhalten ! <br/><br/>";
                }else {
                    move_uploaded_file($file_tmp, 'uploads/'.$random_name. '.jpg');
-                   $sql="insert into bilder (name,album_id,url) values ('".$name."','".$album_id."','".$random_name."')";
+                   $sql="insert into bilder (name,album_id,url,user_id) values ('".$name."','".$album_id."','".$random_name."','".$user_id."')";
                    $result = mysqli_query($conn,$sql);
 
                    echo "Bild erfolgreich hochgeladen!! <br/><br/>";

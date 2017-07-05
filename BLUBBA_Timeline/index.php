@@ -79,16 +79,16 @@ include_once("connect.php");
                             $user_id = $_SESSION['user_id'];
                             $username = $_SESSION ['username'];
 
-                            if (empty ($post) or empty ($post_picture)) {
-                                echo "Bitte befülle alle Felder mit Inhalten ! <br/><br/>";
+                            if (empty ($post)) {
+                                echo "Bitte gebe einen Post ein, du kannst nicht nur ein Bild hochladen ! <br/><br/>";
                             }else {
-                                move_uploaded_file($file_tmp, 'uploads/'.$random_name. '.jpg');
+                                move_uploaded_file($file_tmp, '../Blubb/uploads/'.$random_name. '.jpg');
                                 $sql="insert into posts (post,post_picture,url,date,user_id,username) values ('".$post."','".$post_picture."','".$random_name."',NOW(),'".$user_id."','".$username."')";
-                                echo $sql;
+                                include ("../Blubb/connect.php");
                                 $result = mysqli_query($conn,$sql);
 
 
-                                echo "Bild erfolgreich hochgeladen!! <br/><br/>";
+                                echo "Erfolgreich geblubbert!! <br/><br/>";
                             }
                         }
                         ?>
@@ -115,7 +115,7 @@ include_once("connect.php");
                     echo "<h2>Geschrieben am: $zeile->date</h2>";
                     echo "<h3>Geschrieben von:<a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                     echo "$zeile->post<br>";
-                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Das Bild kann nicht angezeigt werden\" style=\"width:300px;height:100%;\"><br><br>";
+                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br><br>";
                 }
                 ?>
 

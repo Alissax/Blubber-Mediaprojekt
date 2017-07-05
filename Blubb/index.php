@@ -33,8 +33,8 @@ include_once "check_session.php";
                 $user_id = $_SESSION['user_id'];
                 $username = $_SESSION ['username'];
 
-                if (empty ($post) or empty ($post_picture)) {
-                    echo "Bitte befülle alle Felder mit Inhalten ! <br/><br/>";
+                if (empty ($post)) {
+                    echo "Bitte gebe einen Post ein, du kannst nicht nur ein Bild hochladen ! <br/><br/>";
                 }else {
                     move_uploaded_file($file_tmp, 'uploads/'.$random_name. '.jpg');
                     $sql="insert into posts (post,post_picture,url,date,user_id,username) values ('".$post."','".$post_picture."','".$random_name."',NOW(),'".$user_id."','".$username."')";

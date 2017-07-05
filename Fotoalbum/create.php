@@ -1,5 +1,5 @@
 <?php
-
+include_once("check_session.php");
 require_once ("connect.php");
 ?>
 
@@ -19,13 +19,16 @@ require_once ("connect.php");
             <?php
                 if (isset ($_POST ['name'])){
                     $name = $_POST ['name']; // Value der Textbox
+                    $random_name = rand();
+                    $user_id = $_SESSION['user_id'];
+                    $username = $_SESSION ['username'];
                     if (empty ($name)){
                         echo "Bitte gebe dem Album einen Namen <br/><br/>";
                     } else{
                         //mysqli_query("INSERT INTO album VALUE ('','$name','$text')");
                         //$sql="INSERT INTO album (name) VALUES ($name)";
                         //echo "Album erfolgreich erstellt!<br/><br/>";
-                        $sql="insert into album (name)values ('".$name."')"; //Das ist der Code!!!!!!
+                        $sql="insert into album (name, url,user_id)values ('".$name."','".$random_name."','".$user_id."')"; //Das ist der Code!!!!!!
                         $result = mysqli_query($conn,$sql);
                         echo "Album erfolgreich erstellt!<br/><br/>";
                     }

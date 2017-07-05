@@ -1,4 +1,6 @@
-
+<?php
+include_once "check_session.php";
+?>
 <html>
 <head>
     <meta charset="UTF-8">
