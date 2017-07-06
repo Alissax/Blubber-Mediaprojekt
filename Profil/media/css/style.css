@@ -282,10 +282,10 @@ ul.mobile li a:hover {
 
 #about h1 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
+	font-size: 30px;
 	letter-spacing: 1px;
 	margin-bottom: 30px;
-	color: #161616;
+	color: #82ccf2;
 }
 
 #about  {
@@ -293,6 +293,20 @@ ul.mobile li a:hover {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	color: #161616;
+}
+
+a:link{
+	text-decoration: none;
+	color: #4c63f2;
+
+}
+
+a:visited{
+	color: #4c63f2;
+}
+
+a:hover{
+	color: #555555;
 }
 
 /* -- MEINUNG -- */

@@ -76,7 +76,7 @@ include_once("connect.php");
                                     echo "<h1>Profilseite von $zeile->username</h1>";
                                     echo "Auf dieser Seite kannst Du dir die <a href=\"followinglist.php?user_id=$zeile->user_id'\">Abonnements anzeigen</a> lassen.";
                                     echo "<br>";
-                                    echo "Außerdem kannst Du Dir die <a href=\"followerlist.php?user_id=$zeile->user_id'\">Abonnenten anzeigen lassen.</a>";
+                                    echo "Außerdem kannst Du Dir die <a href=\"followerlist.php?user_id=$zeile->user_id'\">Abonnenten ansehen.</a>";
                                     echo " <br>";
                                     echo " <br>";
                                     echo "E-Mail Adresse:&nbsp $zeile->email";
@@ -104,7 +104,7 @@ include_once("connect.php");
 
                                 if ($_SESSION['user_id'] == $zeile->user_id) {
                                         echo "<a href='edit.php?contentID=$zeile->contentID'>bearbeiten</a>&nbsp&nbsp&nbsp";
-                                        echo "<a href='delete.php?contentID=$zeile->contentID'>l&ouml;schen</a><br><br>";
+                                        echo "<a href='delete.php?contentID=$zeile->contentID'>l&ouml;schen</a><br>";
                                         echo "_________________________________________________________";
                                 }
                                     $db = null;

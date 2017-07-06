@@ -11,6 +11,7 @@ include_once("connect.php");
     <link rel="stylesheet" href="media/css/1140.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="media/css/jquery.modal.min.css" type="text/css" media="screen" charset="utf-8">
 
+
     <link rel="stylesheet" href="media/css/style.css" type="text/css" media="screen" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -40,14 +41,19 @@ include_once("connect.php");
     </div>
     <div class="container16"><div class="column16">
             <a href="../BLUBBA_Timeline/index.php"><img class="logo" src="media/img/logo2.png"/></a>
+
             <ul>
                 <li class="active"><a href="">Startseite</a></li>
-                <li> <a href="">Dein Profil</a></li>
+                <?php
+                $user_id = $_SESSION['user_id'];
+                echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Dein Profil</a></li>"; ?>
+
                 <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
                 <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
                 <?php
                 if(!isset($_SESSION['user_id']))?>
                 <li><a href="../login_neu/logout.php">Ausloggen</a></li>
+
             </ul>
             <a href="#"><img class="menu" src="media/img/menu.png" /></a>
             <div class="clear"></div>
@@ -57,7 +63,14 @@ include_once("connect.php");
     <div id="about">
         <div class="container16">
             <div class="column16">
-                <br><br>
+                <br>
+                <form action="search_do.php" method=post>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                    <input type=text name="search" size= 30  placeholder="Suche nach Usern">
+                    <input type=submit name="SUBMIT" value="suchen">
+                    </form>
                 <?php
                     echo "Hallo " .$_SESSION['username'];
                  ?>
@@ -88,7 +101,7 @@ include_once("connect.php");
                                 $result = mysqli_query($conn,$sql);
 
 
-                                echo "Erfolgreich geblubbert!! <br/><br/>";
+                                echo "Erfolgreich geblubbert!! <br/>";
                             }
                         }
                         ?>
@@ -113,9 +126,9 @@ include_once("connect.php");
                 while ($zeile = $query->fetchObject()) {
                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                     echo "<h5>$zeile->date</h5>";
-                    echo" <br>";
+
                     echo "$zeile->post<br>";
-                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
+                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Es wurde kein Bild gepostet\" style=\"width:300px;height:100%;\"><br>";
                     echo "___________________________________________________";
                 }
                 ?>
@@ -127,21 +140,6 @@ include_once("connect.php");
                     die();
                 }
                 ?>
-                HIER KOMMT EIN TEXT REIN!
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-
 
                 <div class="clear"></div>
             </div></div>
@@ -151,7 +149,7 @@ include_once("connect.php");
     <div id="about">
         <div class="container16"><div class="column16">
 
-                HIER WIEDER TEXT
+
 
         <div class="clear"></div>
             </div></div>
@@ -165,7 +163,10 @@ include_once("connect.php");
 </footer>
 <ul class="mobile">
     <li class="active"><a href="">Startseite</a></li>
-    <li><a href="">Dein Profil</a></li>
+    <?php
+    $user_id = $_SESSION['user_id'];
+    echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Dein Profil</a></li>"; ?>
+
     <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
     <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
     <?php

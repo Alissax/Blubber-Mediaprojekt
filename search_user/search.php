@@ -10,8 +10,6 @@
 <form action="search_do.php" method=post>
     Name <br>
 <input type=text name="search" size= 30>
-<br>
-<br>
 <input type=submit name="SUBMIT" value="suchen">
 <br>
 </form>
