@@ -42,7 +42,9 @@ include_once("connect.php");
             <a href="../BLUBBA_Timeline/index.php"><img class="logo" src="media/img/logo2.png"/></a>
             <ul>
                 <li><a href="../BLUBBA_Timeline/index.php">Startseite</a></li>
-                <li> <a href="">Dein Profil</a></li>
+                <?php
+                $user_id = $_SESSION['user_id'];
+                echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Dein Profil</a></li>"; ?>
                 <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
                 <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
                 <?php
