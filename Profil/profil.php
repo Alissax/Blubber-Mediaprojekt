@@ -68,7 +68,7 @@ include_once("connect.php");
                         try {
                             global $dsn, $dbuser, $dbpass;
                             $db = new PDO($dsn, $dbuser, $dbpass);
-                            $sql = "SELECT * FROM posts INNER JOIN users ON posts.user_id=users.user_id WHERE users.user_id = :user_id";
+                            $sql = "SELECT * FROM users WHERE user_id = :user_id";
                             $query = $db->prepare($sql);
                             $query->bindParam(':user_id', $geholteuserID);
                             $query->execute();
@@ -92,7 +92,14 @@ include_once("connect.php");
                                         echo "___________________________________________________";
                                         $i = true;
                                 }
-
+                                global $dsn, $dbuser, $dbpass;
+                                $db = new PDO($dsn, $dbuser, $dbpass);
+                                $sql = "SELECT * FROM posts WHERE user_id = :user_id";
+                                $query = $db->prepare($sql);
+                                $query->bindParam(':user_id', $geholteuserID);
+                                $query->execute();
+                                $i = false;
+                                while ($zeile = $query->fetchObject()) {
 
                                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                                     echo "<h5>$zeile->date</h5>";
@@ -101,8 +108,8 @@ include_once("connect.php");
                                     echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
 
 
-                                    $i=true;
-
+                                    $i = true;
+                                }
 
                                 if ($_SESSION['user_id'] == $zeile->user_id) {
                                         echo "<a href='edit.php?contentID=$zeile->contentID'>bearbeiten</a>&nbsp&nbsp&nbsp";
