@@ -109,15 +109,15 @@ include_once("connect.php");
 
 
                                     $i = true;
-                                }
 
-                                if ($_SESSION['user_id'] == $zeile->user_id) {
+
+                                    if ($_SESSION['user_id'] == $zeile->user_id) {
                                         echo "<a href='edit.php?contentID=$zeile->contentID'>bearbeiten</a>&nbsp&nbsp&nbsp";
                                         echo "<a href='delete.php?contentID=$zeile->contentID'>l&ouml;schen</a><br>";
                                         echo "_________________________________________________________";
-                                }
+                                    }
                                     $db = null;
-
+                                }
                                 }
                         }
                         catch
