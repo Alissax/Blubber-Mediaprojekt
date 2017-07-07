@@ -77,61 +77,6 @@ include_once("../Blubb/connect.php");
                             while ($zeile = $query->fetchObject()) {
                                 if (!$i) {
                                     echo "<h1>Profilseite von $zeile->username</h1>";
-
-
-
-                                    //Hier beginnt der Code für das Profilbild
-
-                                    echo "Hier kannst Du ein Profilbild hochladen:";
-                                    echo " <br>";
-                                    echo " <br>";
-                                    ?>
-
-                        <form enctype="multipart/form-data" method="post">
-                            <input type="file" name="profilbild"/>
-                            <br/>
-                            <input type="submit" name = "upload" value="Upload"/>
-                            <br/>
-                            <br/>
-                        </form>
-
-                                    <?php
-                                    if (isset ($_POST ["upload"])) { //upload ist der name welcher der submit Button trägt
-                                        $name = $_POST ["profilbild"];
-                                        $file = $_FILES ["profilbild"] ["name"];
-                                        $file_type = $_FILES ["profilbild"] ["type"];
-                                        $file_size = $_FILES ["profilbild"] ["size"];
-                                        $file_tmp = $_FILES ["profilbild"] ["tmp_name"];
-                                        $random_name = rand(); // falls mehrere User Bilder unter dem selben Namen speichern
-                                        $user_id = $_SESSION['user_id'];
-                                        $username = $_SESSION ['username'];
-
-
-                                        move_uploaded_file($file_tmp, 'profilbilder/' . $random_name . '.jpg');
-                                        $sql = "update users set profilbild_url=$random_name where user_id = :user_id";
-                                        $query = $db->prepare($sql);
-                                        $query->bindParam(':user_id', $user_id);
-                                        $query->execute();
-
-
-                                            echo "Dein Profilbild wurde erfolgreich hochgeladen.";
-                                            echo "<br>";
-
-
-                                        }
-                                    echo "Dies ist Dein aktuelles Profilbild:";
-                                    echo "<br>";
-                                    echo "<br>";
-                                    ?>
-
-                                    <img src = "profilbilder/<?php echo $random_name ?>"/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-
-                    <!--Hier endet der Code für das Profilbild -->
-
-                                    <?php
                                     echo "Auf dieser Seite kannst Du dir die <a href=\"followinglist.php?user_id=$zeile->user_id'\">Abonnements anzeigen</a> lassen.";
                                     echo "<br>";
                                     echo "Außerdem kannst Du Dir die <a href=\"followerlist.php?user_id=$zeile->user_id'\">Abonnenten ansehen.</a>";
@@ -142,12 +87,32 @@ include_once("../Blubb/connect.php");
                                     echo "Voller Name: &nbsp $zeile->vorname $zeile->name";
                                     echo "<br><br>";
                                 }
-
                                 if ($_SESSION['user_id'] == $zeile->user_id and !$i) {
-                                        echo "<a href=\"profil_edit.php\">Profil bearbeiten</a><br>";
-                                        echo "_________________________________________________________";
-                                        $i = true;
+                                    echo "<a href=\"profil_edit.php\">Profil bearbeiten</a><br>";
+                                    echo "_________________________________________________________<br>";
+                                    $i = true;
                                 }
+
+
+                                echo "Dies ist das aktuelle Profilbild von $zeile->username:<br>";
+
+                                $db = new PDO($dsn, $dbuser, $dbpass);
+                                $sql = "SELECT * FROM users WHERE user_id = :user_id";
+                                $query = $db->prepare($sql);
+                                $query->bindParam(':user_id', $geholteuserID);
+                                $query->execute();
+                                while ($zeile = $query->fetchObject()) {
+                                    echo "<img src='../Profil/profilbilder/$zeile->profilbild_url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
+                                    echo "_________________________________________________________<br>";
+                                }
+                                echo "<br>";
+                                echo "<br>";
+
+
+
+
+
+
                                 global $dsn, $dbuser, $dbpass;
                                 $db = new PDO($dsn, $dbuser, $dbpass);
                                 $sql = "SELECT * FROM posts WHERE user_id = :user_id";

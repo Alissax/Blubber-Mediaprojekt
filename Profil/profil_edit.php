@@ -82,7 +82,7 @@ include_once("connect.php");
                     echo "Nachname:&nbsp <input type='text' name='name' size='30' value='$zeile->name' /><br>";
                     echo "E-Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type='text' name='email' size='30' value='$zeile->email' /><br>";
                     echo "<input type='submit' value='Profil bearbeiten' />";
-                    echo "</form>";
+                    echo "</form><br>";
                 } else {
                 echo "Datensatz nicht gefunden oder das ist nicht dein Profil!";
                 }
@@ -90,6 +90,40 @@ include_once("connect.php");
                 } catch (PDOException $e) {
                 echo "Error!: Bitten wenden Sie sich an den Administrator...";
                 die();
+                }
+                ?>
+                Hier kannst Du Dein Profilbild aktualisieren <br>
+                <form enctype="multipart/form-data" method="post">
+                    <input type="file" name="profilbild"/>
+                    <br/>
+                    <input type="submit" name = "upload" value="Upload"/>
+                    <br/>
+                    <br/>
+                </form>
+                <?php
+                if (isset ($_POST ["upload"])) { //upload ist der name welcher der submit Button trägt
+                    $name = $_POST ["profilbild"];
+                    $file = $_FILES ["profilbild"] ["name"];
+                    $file_type = $_FILES ["profilbild"] ["type"];
+                    $file_size = $_FILES ["profilbild"] ["size"];
+                    $file_tmp = $_FILES ["profilbild"] ["tmp_name"];
+                    $random_name = rand(); // falls mehrere User Bilder unter dem selben Namen speichern
+                    $user_id = $_SESSION['user_id'];
+                    $username = $_SESSION ['username'];
+
+
+                    move_uploaded_file($file_tmp, 'profilbilder/' . $random_name . '.jpg');
+                    $db = new PDO($dsn, $dbuser, $dbpass);
+                    $sql = "update users set profilbild_url=$random_name where user_id = :user_id";
+                    $query = $db->prepare($sql);
+                    $query->bindParam(':user_id', $user_id);
+                    $query->execute();
+
+
+                    echo "Dein Profilbild wurde erfolgreich hochgeladen.";
+                    echo "<br>";
+
+
                 }
                 ?>
 
