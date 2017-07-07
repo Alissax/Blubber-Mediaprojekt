@@ -89,7 +89,7 @@ include_once("connect.php");
 
                                 if ($_SESSION['user_id'] == $zeile->user_id and !$i) {
                                         echo "<a href=\"profil_edit.php\">Profil bearbeiten</a><br>";
-                                        echo "___________________________________________________";
+                                        echo "_________________________________________________________";
                                         $i = true;
                                 }
                                 global $dsn, $dbuser, $dbpass;
