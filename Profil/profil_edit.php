@@ -115,9 +115,13 @@ include_once("connect.php");
                     move_uploaded_file($file_tmp, 'profilbilder/' . $random_name . '.jpg');
                     $db = new PDO($dsn, $dbuser, $dbpass);
                     $sql = "update users set profilbild_url=$random_name where user_id = :user_id";
+                    $sql_2 = "update posts set profilbild_url=$random_name where user_id = :user_id";
                     $query = $db->prepare($sql);
+                    $query_2 = $db->prepare($sql_2);
                     $query->bindParam(':user_id', $user_id);
+                    $query_2->bindParam(':user_id', $user_id);
                     $query->execute();
+                    $query_2->execute();
 
 
                     echo "Dein Profilbild wurde erfolgreich hochgeladen.";

@@ -131,14 +131,15 @@ include_once("connect.php");
 
                 while ($zeile = $query->fetchObject()) {
                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
+                    echo "<img src='../Profil/profilbilder/$zeile->profilbild_url' alt=\"\" style=\"width:75px;height:25%;\"><br>";
                     echo "<h5>$zeile->date</h5>";
                     echo "$zeile->post<br>";
-
                     if ($zeile -> url !=0){
                     echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Es wurde kein Bild gepostet\" style=\"width:300px;height:100%;\"><br>";}
                     echo "___________________________________________________";
                 }
                 ?>
+
 
                     <?php
                     $db = null;
