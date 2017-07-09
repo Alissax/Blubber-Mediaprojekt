@@ -135,7 +135,7 @@ include_once("../Blubb/connect.php");
 
                                     if ($_SESSION['user_id'] == $zeile->user_id) {
                                         echo "<a href='edit.php?post_id=$zeile->post_id'>bearbeiten</a>&nbsp&nbsp&nbsp";
-                                        echo "<a href='delete.php?id=$zeile->id'>l&ouml;schen</a><br>";
+                                        echo "<a href='delete.php?post_id=$zeile->post_id'>l&ouml;schen</a><br>";
                                         echo "_________________________________________________________";
                                     }
                                     $db = null;
