@@ -123,7 +123,6 @@ include_once("../Blubb/connect.php");
                                 while ($zeile = $query->fetchObject()) {
 
                                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
-                                    echo "<img src='../Profil/profilbilder/$zeile->profilbild_url' alt=\"\" style=\"width:75px;height:25%;\"><br>";
                                     echo "<h5>$zeile->date</h5>";
                                     echo " <br>";
                                     echo "$zeile->post<br>";
