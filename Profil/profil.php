@@ -105,7 +105,7 @@ include_once("../Blubb/connect.php");
                                     echo "<img src='../Profil/profilbilder/$zeile->profilbild_url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
                                     echo "_________________________________________________________<br>";
                                 }
-                                echo "<br>";
+
                                 echo "<br>";
 
 
@@ -134,8 +134,8 @@ include_once("../Blubb/connect.php");
 
 
                                     if ($_SESSION['user_id'] == $zeile->user_id) {
-                                        echo "<a href='edit.php?contentID=$zeile->contentID'>bearbeiten</a>&nbsp&nbsp&nbsp";
-                                        echo "<a href='delete.php?contentID=$zeile->contentID'>l&ouml;schen</a><br>";
+                                        echo "<a href='edit.php?post_id=$zeile->post_id'>bearbeiten</a>&nbsp&nbsp&nbsp";
+                                        echo "<a href='delete.php?id=$zeile->id'>l&ouml;schen</a><br>";
                                         echo "_________________________________________________________";
                                     }
                                     $db = null;

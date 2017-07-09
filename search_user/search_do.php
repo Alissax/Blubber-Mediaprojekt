@@ -21,7 +21,7 @@ try {
     $query->execute();
     while ($zeile = $query->fetchObject()) {
         echo "<tr>";
-        echo "<td>$zeile->username</td>";
+        echo "<td><a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></td><br>";
     }
 } catch (PDOException $e) {
     echo "Error!: Bitte wenden Sie sich an den Administrator!?..." . $e;
@@ -29,4 +29,4 @@ try {
 }
 ?>
 
-<a href="index.php">Zurück zur Startseite</a>
+<a href="../BLUBBA_Timeline/index.php">Zurück zur Startseite</a>
