@@ -49,9 +49,11 @@ include_once("connect.php");
             <a href="../BLUBBA_Timeline/index.php"><img class="logo" src="media/img/logo2.png"/></a>
             <ul>
                 <li><a href="../BLUBBA_Timeline/index.php">Startseite</a></li>
-                <li> <a href="">Dein Profil</a></li>
-                <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
-                <li class="active"><a href="change_pw.php">Einstellungen</a></li>
+                <?php
+                $user_id = $_SESSION['user_id'];
+                echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Mein Profil</a></li>"; ?>
+                <li><a href="../Fotoalbum/index2.php">Mein Fotoalbum</a></li>
+                <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
                 <?php
                 if(!isset($_SESSION['user_id']))?>
                 <li><a href="../login_neu/logout.php">Ausloggen</a></li>
@@ -150,13 +152,15 @@ include_once("connect.php");
 </section>
 
 <footer id="footer">
-    <a href="http://medien-go.com" target="_blank">Developed by medien.GO</a>
+    <a href="#" target="_blank">BLUBBA-Gruppe</a>  &nbsp  &nbsp  &nbsp
 </footer>
 <ul class="mobile">
-    <li><a href="">Startseite</a></li>
-    <li><a href="">Dein Profil</a></li>
-    <li><a href="../Fotoalbum/index2.php">Dein Fotoalbum</a></li>
-    <li class="active"><a href="../change_pw/change_pw.php">Einstellungen</a></li>
+    <li><a href="../BLUBBA_Timeline/index.php">Startseite</a></li>
+    <?php
+    $user_id = $_SESSION['user_id'];
+    echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Mein Profil</a></li>"; ?>
+    <li><a href="../Fotoalbum/index2.php">Mein Fotoalbum</a></li>
+    <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
     <?php
     if(!isset($_SESSION['user_id']))?>
     <li><a href="../login_neu/logout.php">Ausloggen</a></li>
