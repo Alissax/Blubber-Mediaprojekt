@@ -70,11 +70,11 @@ include_once("connect.php");
                 <br>
                 <br>
 
-                <h1>
+                <h2>
     <?php
     $suchbegriff = $_POST['search']; #Suchbegriff aus Formular dem Parameter $suchbegriff zuweisen
     echo "Deine Suchergebnisse für: ". $suchbegriff?>
-                </h1>
+                </h2>
 
                 <?php
                 include_once("connect.php");
@@ -85,7 +85,7 @@ include_once("connect.php");
                     $query->execute();
                     while ($zeile = $query->fetchObject()) {
                         echo "<tr>";
-                        echo "Besuche das Profil von :<h2><td><a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></td></h2><br>";
+                        echo "Besuche das Profil von :<h3><td><a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></td></h3><br>";
                     }
                 } catch (PDOException $e) {
                     echo "Error!: Bitte wenden Sie sich an den Administrator!?..." . $e;
