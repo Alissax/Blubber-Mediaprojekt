@@ -82,12 +82,13 @@ include_once("../Blubb/connect.php");
                                     echo "Außerdem kannst Du Dir die <a href=\"followerlist.php?user_id=$zeile->user_id'\">Abonnenten ansehen.</a>";
                                     echo " <br>";
                                     echo " <br>";
+
+                                }
+                                if ($_SESSION['user_id'] == $zeile->user_id and !$i) {
                                     echo "E-Mail Adresse:&nbsp $zeile->email";
                                     echo " <br>";
                                     echo "Voller Name: &nbsp $zeile->vorname $zeile->name";
                                     echo "<br><br>";
-                                }
-                                if ($_SESSION['user_id'] == $zeile->user_id and !$i) {
                                     echo "<a href=\"profil_edit.php\">Profil bearbeiten</a><br>";
                                     echo "_________________________________________________________<br>";
                                     $i = true;
@@ -124,8 +125,8 @@ include_once("../Blubb/connect.php");
 
                                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                                     echo "<h5>$zeile->date</h5>";
-                                    echo " <br>";
-                                    echo "$zeile->post<br>";
+
+                                    echo "$zeile->post<br><br>";
                                     if ($zeile -> url !=0){
                                     echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";}
 
