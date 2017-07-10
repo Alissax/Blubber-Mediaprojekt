@@ -126,7 +126,8 @@ include_once("../Blubb/connect.php");
                                     echo "<h5>$zeile->date</h5>";
                                     echo " <br>";
                                     echo "$zeile->post<br>";
-                                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";
+                                    if ($zeile -> url !=0){
+                                    echo "<img src='../Blubb/uploads/$zeile->url' alt=\"\" style=\"width:300px;height:100%;\"><br>";}
 
 
                                     $i = true;
@@ -141,6 +142,7 @@ include_once("../Blubb/connect.php");
                                 }
                                 }
                         }
+
                         catch
                         (PDOException $e) {
                             echo "Error!: Bitte wenden Sie sich an den Administrator!..." . $e;
