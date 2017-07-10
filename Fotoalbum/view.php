@@ -21,7 +21,7 @@
             ?>
             <div id="view_box">
                 <img src = "uploads/<?php echo $url ?>"/>
-                <br/>
+                <br/><br/>
                 <b><?php echo $name?></b>
             </div>
             <?php

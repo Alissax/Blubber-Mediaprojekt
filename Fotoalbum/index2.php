@@ -14,7 +14,8 @@ include_once "check_session.php";
     <?php include "title_bar.php"?>
     <div id = "container">
         <?php
-        $sql="SELECT id, name FROM album";
+        $user_id = $_SESSION["user_id"];
+        $sql="SELECT id, name FROM album WHERE user_id = $user_id";
         $result = mysqli_query($conn,$sql);
         while ($run = mysqli_fetch_array ($result)) {
             $album_id = $run ["id"];
@@ -27,9 +28,10 @@ include_once "check_session.php";
             ?>
             <a href="view.php?id=<?php echo $album_id; ?>">
                 <div id="view_box">
-                    <img src="uploads/<?php echo $pic; ?>"/>
-                    <br/>
-                    <b><?php echo $album_name ?></b>
+                    <img src="uploads/unnamed.png"/>
+                    <br/><br/>
+                    Album: <br/>
+                    <?php echo $album_name ?>
 
                 </div>
             </a>

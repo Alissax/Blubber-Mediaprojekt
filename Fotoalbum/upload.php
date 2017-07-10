@@ -51,7 +51,8 @@ include_once("check_session.php");
             Wähle das Album aus, in dem Dein Foto gespeichert werden soll: <br/>
             <select name="album">
                 <?php
-                    $sql="SELECT id, name FROM album";
+                $user_id = $_SESSION["user_id"];
+                    $sql="SELECT id, name FROM album WHERE user_id = $user_id";
                     $result = mysqli_query($conn,$sql);
                     //$query = mysqli_query("SELECT * FROM album");
                     while ($run = mysqli_fetch_array ($result)){
