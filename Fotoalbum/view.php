@@ -6,7 +6,8 @@
 
 </head>
 <body>
-<?php include "connect.php";?>
+<?php include "connect.php";
+include_once("check_session.php");?>
 <div id="body">
     <?php include "title_bar.php"?>
     <div id = "container">
