@@ -74,6 +74,7 @@ include_once("../Blubb/connect.php");
                             $query->bindParam(':user_id', $geholteuserID);
                             $query->execute();
                             $i = false;
+
                             while ($zeile = $query->fetchObject()) {
                                 if (!$i) {
                                     echo "<h1>Profilseite von $zeile->username</h1>";
