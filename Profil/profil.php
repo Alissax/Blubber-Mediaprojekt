@@ -79,9 +79,10 @@ include_once("../Blubb/connect.php");
                                     echo "<h1>Profilseite von $zeile->username</h1>";
                                     global $dsn, $dbuser, $dbpass;
                                     $db = new PDO($dsn, $dbuser, $dbpass);
-                                    $sql = "SELECT * FROM follows WHERE friend_id = :user_id";
+                                    $sql = "SELECT * FROM follows WHERE friend_id = :follow_id AND user_id = :user_id";
                                     $query = $db->prepare($sql);
-                                    $query->bindParam(':user_id', $geholteuserID);
+                                    $query->bindParam(':follow_id', $geholteuserID);
+                                    $query->bindParam(':user_id', $_SESSION["user_id"]);
                                     $query->execute();
                                     $follow = $query -> fetch();
                                     if ($follow!=false){
