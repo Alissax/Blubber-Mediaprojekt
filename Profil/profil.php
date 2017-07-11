@@ -85,10 +85,10 @@ include_once("../Blubb/connect.php");
                                     $query->execute();
                                     $follow = $query -> fetch();
                                     if ($follow!=false){
-                                        echo "<a href=\"entfollow_do.php?user_id=$zeile->user_id\">Entfollow</a><br><br>";
+                                        echo "<a href=\"entfollow_do.php?user_id=$zeile->user_id\"><h2>Entfollow</h2></a><br>";
                                     }
                                     else{
-                                    echo "<a href=\"follow_do.php?user_id=$zeile->user_id\">Follow</a><br><br>";}
+                                    echo "<a href=\"follow_do.php?user_id=$zeile->user_id\"><h2>Follow</h2></a><br>";}
 
                                     echo "Auf dieser Seite kannst Du dir die <a href=\"followinglist.php?user_id=$zeile->user_id'\">Abonnements anzeigen</a> lassen.";
                                     echo "<br>";

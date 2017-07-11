@@ -287,6 +287,12 @@ ul.mobile li a:hover {
 	margin-bottom: 30px;
 	color: #82ccf2;
 }
+#about h2 {
+	ine-height: 1.7em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 23px;
+	color: #5b8ff2;
+}
 #about h5 {
 	ine-height: 1.7em;
 	font-family: 'Source Sans Pro', sans-serif;
