@@ -128,25 +128,28 @@ include_once("connect.php");
                 $sql = "SELECT posts.user_id, posts.username, posts.date, posts.post, posts.url, users.profilbild_url FROM posts LEFT JOIN users ON posts.user_id=users.user_id";
                 $query = $db->prepare($sql);
                 $query->execute();
+                //Lade gesamte Follows-DB-Tabelle
                 $sql_follows = "SELECT * FROM follows";
                 $query_follows = $db->prepare($sql_follows);
                 $query_follows->execute();
                 $own_user_id = $_SESSION['user_id'];
+                //Schreibe eigene ID in $follows
                 $follows=array();
                 $follows[]=$own_user_id;
                 $object_follows;
 
+                //Schreibe alle Follow-IDs, die von der eigenen Nutzer-ID gefolgt werden, in $follows
                 for ($i=0;$i<$query_follows->rowCount();$i++)
                 {
                     $object_follows = $query_follows->fetchObject();
                     if($object_follows->user_id==$own_user_id) {
-
-
                         $follows[] = $object_follows->friend_id;
                     }
                 }
 
+                //Zeige alle Posts an
                 while ($zeile = $query->fetchObject()) {
+                    //Checke, ob der jeweilige Post angezeigt werden soll oder nicht
                     $post_item=false;
                     for ($i=0;$i<count($follows);$i++)
                     {
