@@ -128,8 +128,33 @@ include_once("connect.php");
                 $sql = "SELECT posts.user_id, posts.username, posts.date, posts.post, posts.url, users.profilbild_url FROM posts LEFT JOIN users ON posts.user_id=users.user_id";
                 $query = $db->prepare($sql);
                 $query->execute();
+                $sql_follows = "SELECT * FROM follows";
+                $query_follows = $db->prepare($sql_follows);
+                $query_follows->execute();
+                $own_user_id = $_SESSION['user_id'];
+                $follows=array();
+                $follows[]=$own_user_id;
+                $object_follows;
+
+                for ($i=0;$i<$query_follows->rowCount();$i++)
+                {
+                    $object_follows = $query_follows->fetchObject();
+                    if($object_follows->user_id==$own_user_id) {
+
+
+                        $follows[] = $object_follows->friend_id;
+                    }
+                }
 
                 while ($zeile = $query->fetchObject()) {
+                    $post_item=false;
+                    for ($i=0;$i<count($follows);$i++)
+                    {
+                        if ($zeile->user_id==$follows[$i])
+                            $post_item=true;
+                    }
+                    if ($post_item){
+
                     echo "<h3>BLUBB von <a href ='../Profil/profil.php?user_id= $zeile->user_id'>$zeile->username</a></h3>";
                     echo "<img src='../Profil/profilbilder/$zeile->profilbild_url' alt=\"\" style=\"width:75px;height:25%;\"><br>";
                     echo "<h5>$zeile->date</h5>";
@@ -137,7 +162,7 @@ include_once("connect.php");
                     if ($zeile -> url !=0){
                     echo "<img src='../Blubb/uploads/$zeile->url' alt=\"Es wurde kein Bild gepostet\" style=\"width:300px;height:100%;\"><br>";}
                     echo "___________________________________________________";
-                }
+                }}
                 ?>
 
 
