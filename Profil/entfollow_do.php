@@ -13,8 +13,7 @@ $user_id = $_SESSION['user_id'];
 try {
     include_once("connect.php");
     $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql="DELETE FROM follows WHERE 
-(user_id, friend_id) values ('".$user_id."','".$friend_id."')";
+    $sql="DELETE from follows WHERE user_id=$user_id AND friend_id=$friend_id";
     include ("../Blubb/connect.php");
     $result = mysqli_query($conn,$sql);
 

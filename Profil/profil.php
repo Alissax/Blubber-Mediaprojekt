@@ -77,7 +77,19 @@ include_once("../Blubb/connect.php");
                             while ($zeile = $query->fetchObject()) {
                                 if (!$i) {
                                     echo "<h1>Profilseite von $zeile->username</h1>";
-                                    echo "<a href=\"follow_do.php?user_id=$zeile->user_id\">Follow</a><br><br>";
+                                    global $dsn, $dbuser, $dbpass;
+                                    $db = new PDO($dsn, $dbuser, $dbpass);
+                                    $sql = "SELECT * FROM follows WHERE friend_id = :user_id";
+                                    $query = $db->prepare($sql);
+                                    $query->bindParam(':user_id', $geholteuserID);
+                                    $query->execute();
+                                    $follow = $query -> fetch();
+                                    if ($follow!=false){
+                                        echo "<a href=\"entfollow_do.php?user_id=$zeile->user_id\">Entfollow</a><br><br>";
+                                    }
+                                    else{
+                                    echo "<a href=\"follow_do.php?user_id=$zeile->user_id\">Follow</a><br><br>";}
+
                                     echo "Auf dieser Seite kannst Du dir die <a href=\"followinglist.php?user_id=$zeile->user_id'\">Abonnements anzeigen</a> lassen.";
                                     echo "<br>";
                                     echo "Außerdem kannst Du Dir die <a href=\"followerlist.php?user_id=$zeile->user_id'\">Abonnenten ansehen.</a>";
