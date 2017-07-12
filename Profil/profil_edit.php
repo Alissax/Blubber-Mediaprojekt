@@ -139,7 +139,7 @@ include_once("connect.php");
     <div id="about">
         <div class="container16"><div class="column16">
 
-                HIER WIEDER TEXT
+
 
                 <div class="clear"></div>
             </div></div>
@@ -156,7 +156,7 @@ include_once("connect.php");
     <?php
     $user_id = $_SESSION['user_id'];
     echo "<li><a href=\"../Profil/profil.php?user_id=$user_id\">Mein Profil</a></li>"; ?>
-    <li><a href="../Fotoalbum/index2.php">Mein Fotoalbum</a></li>
+
     <li><a href="../change_pw/change_pw.php">Einstellungen</a></li>
     <?php
     if(!isset($_SESSION['user_id']))?>
