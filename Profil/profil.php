@@ -133,7 +133,7 @@ include_once("../Blubb/connect.php");
 
                                 global $dsn, $dbuser, $dbpass;
                                 $db = new PDO($dsn, $dbuser, $dbpass);
-                                $sql = "SELECT * FROM posts WHERE user_id = :user_id";
+                                $sql = "SELECT * FROM posts WHERE user_id = :user_id order by date DESC";
                                 $query = $db->prepare($sql);
                                 $query->bindParam(':user_id', $geholteuserID);
                                 $query->execute();
