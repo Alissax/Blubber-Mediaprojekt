@@ -82,7 +82,7 @@ include_once("connect.php");
                     echo "<input type='hidden' name='user_id' value='$zeile->user_id' />";
                     echo "Vorname:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type='text' name='vorname' size='30' value='$zeile->vorname' /><br>";
                     echo "Nachname:&nbsp <input type='text' name='name' size='30' value='$zeile->name' /><br>";
-                    echo "E-Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type='text' name='email' size='30' value='$zeile->email' /><br>";
+                    echo "E-Mail:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type='text' name='email' size='30' value='$zeile->email' /><br>";
                     echo "<input type='submit' value='Profil bearbeiten' />";
                     echo "</form><br>";
                 } else {
