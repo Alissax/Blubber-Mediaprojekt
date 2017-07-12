@@ -211,64 +211,7 @@ ul.mobile li a:hover {
 	padding-bottom: 30px;
 }
 
-/* -- VORTEILE -- */
 
-#vorteile {
-	display: block;
-	margin-top: 40px;
-	padding-bottom: 70px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#vorteile h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#vorteile ul {
-	float: left;
-	list-style: none;
-}
-
-#vorteile ul li {
-	display: block;
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 25px;
-	color: #161616;
-	letter-spacing: 1px;
-	opacity: 0;
-}
-
-#vorteile ul li:before {
-	content: "\2192 \0020";
-}
-
-#vorteile .tria a {
-	font-family: 'Source Sans Pro', sans-serif;
-	position: absolute;
-	float: right;
-	right: -353px;
-	padding: 20px;
-	background-color: #82ccf2;
-	color: white;
-	font-weight: 600;
-	font-size: 30px;
-	margin-top: 80px;
-	text-decoration: none;
-}
-
-#vorteile p {
-	line-height: 1.7em;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 23px;
-    color: #161616;
-    margin-top: 40px;
-}
 
 /* -- ABOUT -- */
 
@@ -287,107 +230,52 @@ ul.mobile li a:hover {
 	margin-bottom: 30px;
 	color: #82ccf2;
 }
+
 #about h2 {
-	ine-height: 1.7em;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 23px;
+	letter-spacing: 1px;
+
 	color: #5b8ff2;
 }
+
+#about h3 {
+	ine-height: 1.7em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 25px;
+	color: #82ccf2;
+	text-decoration: none;
+}
+
 #about h5 {
 	ine-height: 1.7em;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
 	color: #555555;
 }
-
 #about  {
 	line-height: 1.7em;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	color: #161616;
+	text-decoration: none;
 }
 
 a:link{
 	text-decoration: none;
-	color: #4c63f2;
+	color:#82ccf2;
 
 }
 
 a:visited{
-	color: #4c63f2;
+	color: #82ccf2;
 }
 
 a:hover{
 	color: #555555;
 }
 
-/* -- MEINUNG -- */
 
-#meinung {
-	display: block;
-	margin-top: 40px;
-	padding-bottom: 70px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#meinung h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#meinung ul {
-	display: block;
-	list-style-type: none;
-}
-
-#meinung ul li {
-	display: block;
-	line-height: 1.7em;
-	font-family: 'Annie Use Your Telescope', cursive;
-	font-size: 28px;
-	color: #161616;
-	opacity: 0.6;
-	height: 270px;
-}
-
-#meinung ul li:nth-child(2), #meinung ul li:nth-child(3) {
-	display: none;
-}
-
-#meinung ul li span {
-	display: block;
-	float: right;
-    line-height: 1.7em;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 18px;
-    color: #161616;
-    margin-top: 30px;
-}
-
-#meinung .meinungnav {
-	width: 100px;
-	float: right;
-}
-
-#meinung .leftc a {
-	float: left;
-}
-
-#meinung .rightc a {
-	float: right;
-}
-
-#meinung .rightc a, #meinung .leftc a {
-	padding: 14px;
-	color: white;
-	background-color: #161616;
-	opacity: 0.8;
-	text-decoration: none;
-}
 
 /* -- PREFOOTER -- */
 
@@ -448,402 +336,8 @@ a:hover{
 	text-decoration: underline;
 }
 
-/* -- IMPRESSUM -- */
 
-#impre {
-	display: block;
-	margin-top: 40px;
-	padding-bottom: 70px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
 
-#impre h1, #impre p h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 25px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#impre p {
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 14px;
-	color: #161616;
-}
-
-#impre a {
-	color: #161616;
-}
-
-#impre .fleft {
-	float: left;
-}
-
-#impre .fleft.ri {
-	float: left;
-	margin-left: 250px;
-}
-
-/* -- SERVICE -- */
-
-#service {
-	display: block;
-	margin-top: 40px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#service h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#service p {
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	color: #161616;
-}
-
-#service ul {
-	display: block;
-	list-style-type: none;
-	font-size: 0px;
-	text-align: center;
-	margin-top: 60px;
-	margin-left: -100px;
-	margin-top: -40px;
-}
-
-#service ul li {
-	display: inline-table;
-	font-size: 13px;
-	width: 300px;
-	height: 430px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 500;
-	line-height: 1.6em;
-	margin-left: 100px;
-	margin-top: 100px;
-}
-
-#service ul li img {
-	display: inline-table;
-	width: 300px;
-	height: 300px;
-}
-
-#service ul li span {
-	display: block;
-	text-align: left;
-	padding: 5px;
-	padding-top: 15px;
-}
-
-#service ul li a {
-	display: block;
-	text-align: left;
-	padding: 5px;
-	color: #db2d26;
-	opacity: 0.8;
-	font-weight: 600;
-	font-size: 12px;
-}
-
-#service ul li div {
-	position: relative;
-	margin-top: -46px;
-	display: block;
-	height: 40px;
-	line-height: 40px;
-	background-color: #db2d26;
-	color: white;
-	opacity: 0.8;
-	text-align: left;
-	padding-left: 7px;
-	font-size: 15px !important;
-}
-
-#service ul.prlist {
-	padding-bottom: 70px;
-}
-
-#service .servicesteps {
-	display: block;
-	text-align: center;
-	font-size: 0px;
-	margin-top: 40px;
-	margin-bottom: 60px;
-}
-
-#service .servicesteps p {
-	display: inline-table;
-	width: 355px;
-	background-color: #db2d26;
-	color: white;
-	line-height: 80px;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 16px;
-	color: white;
-	height: 80px;
-	margin: 7px;
-	opacity: 0.9;
-}
-
-#service .servicesteps p a {
-	text-decoration: underline;
-	color: white;
-}
-
-#finanz {
-	display: block;
-	margin-top: 40px;
-	padding-bottom: 70px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#finanz h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#finanz p {
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	color: #161616;
-}
-
-/* -- MESSAGE -- */
-
-#finanz form.message {
-	display: block;
-	margin-top: 40px;
-}
-
-#finanz form.message p {
-	display: block;
-	margin-top: 40px;
-}
-
-#finanz form.message label {
-	display: block;
-	font-size: 23px;
-}
-
-#finanz form.message {
-	display: block;
-}
-
-#finanz .gt a {
-	padding: 10px 20px;
-    font-family: 'Open Sans', sans-serif;
-	font-weight: 400; 
-	font-size: 14px;
-	text-decoration: none;
-	top: 10px;
-	position: relative;
-}
-
-.gt a {
-	background-color: #F4F4F4;
-	color: #161616;
-	margin-right: 2px;
-}
-
-#finanz form.message input.textin {
-	display: block;
-	width: 95%;
-	border: 2px solid grey;
-	font-size: 15px;
-	padding: 4px 1%;
-	margin-top: 7px;
-	font-family: 'Roboto', sans-serif;
-	color: #393939;
-}
-
-input.texting {
-	font-size: 0px;
-	opacity: 0;
-}
-
-input.textingzmglk {
-	font-size: 0px;
-	opacity: 0;
-}
-
-input.textingkont {
-	font-size: 0px;
-	opacity: 0;
-}
-
-#finanz form.message textarea.textarea {
-	display: block;
-	width: 95%;
-	border: 2px solid grey;
-	font-size: 15px;
-	padding: 4px 1%;
-	margin-top: 7px;
-	font-family: 'Roboto', sans-serif;
-	color: #393939;
-	height: 100px;
-	resize: none;
-}
-
-.uploadinfo {
-	display: block;
-	margin-top: 10px;
-}
-
-.urheberinfo {
-	display: block;
-	margin-top: 0px;
-	line-height: 25px;
-}
-
-.pflichtinfo {
-	display: block;
-	margin-top: -32px;
-}
-
-#finanz form.message p.moretop {
-	margin-top: 60px;
-}
-
-#finanz form.message p.responsive {
-	color: #161616;
-	line-height: 25px;
-	font-size: 15px;
-	display: none;
-}
-
-#finanz form.message input.submit {
-	width: 98%;
-	color: white;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	display: block;
-	color: white;
-	background-color: #db2d26;
-	transition: all 0.5s;
-	font-size: 16px;
-	border-radius: 7px;
-	overflow: hidden;
-	border: none;
-	opacity: 0.8;
-}
-
-#finanz form.message input.submit:hover {
-	transition: all 0.5s;
-	cursor: pointer;
-	opacity: 1;
-}
-
-.loader {
-	display: block;
-	text-align: center;
-	display: none;
-	margin-top: 45px;
-}
-
-#magazin {
-	display: block;
-	margin-top: 40px;
-	padding-bottom: 70px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#magazin h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 40px;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #161616;
-}
-
-#magazin p {
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	color: #161616;
-}
-
-#finanz ul {
-	float: left;
-	list-style: none;
-	margin-top: 20px;
-}
-
-#finanz ul li {
-	display: block;
-	line-height: 1.7em;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	color: #161616;
-	letter-spacing: 1px;
-}
-
-#finanz ul li:before {
-	content: "\2192 \0020";
-}
-
-.inforesp {
-	display: block;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 14px;
-    line-height: 1.6em;
-    margin-top: 30px;
-}
-
-ul#prpop {
-	list-style-type: none;
-	color: #161616;
-}
-
-.modal {
-	margin-top: 100px;
-}
-
-ul#prpop li {
-	line-height: 35px;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 13px;
-	letter-spacing: 0px;
-}
-
-ul#prpop img {
-	display: block;
-	margin-bottom: 30px;
-}
-
-ul#prpop p a {
-	color: white;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 15px;
-	padding: 10px;
-	background-color: #db2d26;
-	text-decoration: none;
-	float: right;
-}
-
-ul#prpop h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 22px;
-	margin-bottom: 20px;
-	text-align: center;
-}
 
 /* -- MEDIA QUERIES -- */
 
@@ -865,10 +359,6 @@ ul#prpop h1 {
 
 	.backhead p {
 		font-size: 16px;
-	}
-
-	#service .servicesteps p {
-		width: 270px;
 	}
 
 }
@@ -898,27 +388,6 @@ ul#prpop h1 {
 		font-size: 16px;
 	}
 
-	#vorteile ul li {
-		font-size: 23px;
-	}
-
-	#vorteile .tria a {
-		display: block;
-		position: relative;
-	}
-
-	#about p {
-		font-size: 19px;
-	}
-
-	#service p {
-		font-size: 19px;
-	}
-
-	#impre .fleft.ri {
-		float: left;
-		margin-left: 180px;
-	}
 
 }
 
@@ -968,60 +437,12 @@ ul#prpop h1 {
 	font-size: 63px;
 }
 
-#vorteile ul li {
-	font-size: 21px;
-	line-height: 25px;
-    margin-bottom: 18px;
-    letter-spacing: 0px;
-}
-
-#vorteile .tria a {
-	display: block;
-	position: relative;
-	padding: 15px;
-    font-size: 27px;
-    margin-top: 19px;
-}
-
 #about p {
 	font-size: 19px;
 }
 
-#service p {
-	font-size: 19px;
-}
-
-#meinung ul li {
-	font-size: 25px;
-}
-
-#meinung ul li span {
-	font-size: 16px;
-}
-
-#meinung ul li {
-	height: 280px;
-}
-
 .conhe span.conhide {
 	display: none;
-}
-
-#service .servicesteps p {
-		width: 100%;
-}
-
-#impre .fleft.ri {
-	float: left;
-	margin-left: 0px;
-}
-
-#service ul li {
-	margin-top: 30px;
-}
-
-#service ul {
-	margin-top: 20px;
 }
 
 .modal {
@@ -1089,44 +510,9 @@ ul#prpop h1 {
 	font-size: 45px;
 }
 
-#vorteile h1 {
-	font-size: 26px;
-	letter-spacing: 0px;
-}
-
-#vorteile ul li {
-	font-size: 17px;
-    line-height: 20px;
-    margin-bottom: 22px;
-    letter-spacing: 0px;
-}
-
-#vorteile .tria a {
-	display: block;
-    position: relative;
-    padding: 15px;
-    font-size: 19px;
-    margin-top: 19px;
-}
 
 #about p {
 	font-size: 18px;
-}
-
-#service p {
-	font-size: 18px;
-}
-
-#meinung ul li {
-	font-size: 20px;
-}
-
-#meinung ul li {
-	height: 355px;
-}
-
-#meinung ul li span {
-	font-size: 15px;
 }
 
 #prefooter a {
@@ -1135,25 +521,6 @@ ul#prpop h1 {
 
 .conhe span.conhide {
 	display: none;
-}
-
-#service .servicesteps p {
-		width: 100%;
-		height: 55px;
-		line-height: 55px;
-}
-
-#impre .fleft.ri {
-	float: left;
-	margin-left: 0px;
-}
-
-#service ul li {
-	margin-top: 30px;
-}
-
-#service ul {
-	margin-top: 20px;
 }
 
 }
