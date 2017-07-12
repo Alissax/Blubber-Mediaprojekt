@@ -84,9 +84,6 @@ include_once("connect.php");
                         if (isset ($_POST ["upload"])) { //upload ist der name welcher der submit Button trägt, siehe unten
                             $post = $_POST ["post"];
                             $post_picture = $_FILES ["post_picture"] ["name"];
-                            $file = $_FILES ["post_picture"] ["name"];
-                            $file_type = $_FILES ["post_picture"] ["type"];
-                            $file_size = $_FILES ["post_picture"] ["size"];
                             $file_tmp = $_FILES ["post_picture"] ["tmp_name"];
                             if (!empty($post_picture)){
                                 $random_name = rand(); // falls mehrere User Bilder unter dem selben Namen speichern
@@ -94,10 +91,8 @@ include_once("connect.php");
                             else {
                                 $random_name = "0";
                             }
-
                             $user_id = $_SESSION['user_id'];
                             $username = $_SESSION ['username'];
-
                             if (empty ($post)) {
                                 echo "Bitte gebe einen Post ein, du kannst nicht nur ein Bild hochladen ! <br/><br/>";
                             }else {
@@ -111,9 +106,7 @@ include_once("connect.php");
                             }
                         }
                         ?>
-
                         <textarea name="post" rows="5" cols= "30" maxlength="70" placeholder="Teile der Welt mit was dich bewegt..."></textarea>
-
                         <br/>
                         Wähle das Foto aus, welches du hochladen möchtest: <br/>
                         <input type ="file" name="post_picture"/>
