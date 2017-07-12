@@ -125,7 +125,7 @@ include_once("connect.php");
                 <?php
                 try {
                 $db = new PDO($dsn, $dbuser, $dbpass);
-                $sql = "SELECT posts.user_id, posts.username, posts.date, posts.post, posts.url, users.profilbild_url FROM posts LEFT JOIN users ON posts.user_id=users.user_id";
+                $sql = "SELECT posts.user_id, posts.username, posts.date, posts.post, posts.url, users.profilbild_url FROM posts LEFT JOIN users ON posts.user_id=users.user_id order by date DESC ";
                 $query = $db->prepare($sql);
                 $query->execute();
                 //Lade gesamte Follows-DB-Tabelle
