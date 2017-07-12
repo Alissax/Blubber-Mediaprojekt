@@ -90,7 +90,7 @@ include_once("connect.php");
     <div id="about">
         <div class="container16"><div class="column16">
 
-                HIER WIEDER TEXT
+
 
                 <div class="clear"></div>
             </div></div>

@@ -80,7 +80,7 @@ include_once("connect.php");
                         echo "<h1>Blubb id: $zeile->post_id</h1>";
                         echo "<form action='content_edit_do.php' method='post'>";
                         echo "<input type='hidden' name='post_id' value='$zeile->post_id' />";
-                        echo "Inhalt deines Blubbs<br> <input type='text' name='post' size='150' value='$zeile->post' /><br>";
+                        echo "Inhalt deines Blubbs<br> <input type='text' name='post' size='40' value='$zeile->post' /><br>";
 
                         echo "<input type='submit' value='Blubb bearbeiten' />";
                         echo "</form>";

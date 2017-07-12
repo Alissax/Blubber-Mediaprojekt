@@ -112,7 +112,7 @@ include_once("connect.php");
                         }
                         ?>
 
-                        <textarea name="post" rows="5" cols= "30" maxlength="150" placeholder="Teile der Welt mit was dich bewegt..."></textarea>
+                        <textarea name="post" rows="5" cols= "30" maxlength="70" placeholder="Teile der Welt mit was dich bewegt..."></textarea>
 
                         <br/>
                         Wähle das Foto aus, welches du hochladen möchtest: <br/>
