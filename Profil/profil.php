@@ -86,11 +86,13 @@ include_once("../Blubb/connect.php");
                                     $query->bindParam(':user_id', $_SESSION["user_id"]);
                                     $query->execute();
                                     $follow = $query -> fetch();
-                                    if ($follow!=false){
-                                        echo "<a href=\"entfollow_do.php?user_id=$zeile->user_id\"><h2>Entfollow</h2></a><br>";
+                                    if ($_SESSION ['user_id'] != $geholteuserID) {
+                                        if ($follow != false) {
+                                            echo "<a href=\"entfollow_do.php?user_id=$zeile->user_id\"><h2>Entfollow</h2></a><br>";
+                                        } else {
+                                            echo "<a href=\"follow_do.php?user_id=$zeile->user_id\"><h2>Follow</h2></a><br>";
+                                        }
                                     }
-                                    else{
-                                    echo "<a href=\"follow_do.php?user_id=$zeile->user_id\"><h2>Follow</h2></a><br>";}
 
                                     echo "Auf dieser Seite kannst Du dir die <a href=\"followinglist.php?user_id=$zeile->user_id'\">Abonnements anzeigen</a> lassen.";
                                     echo "<br>";
